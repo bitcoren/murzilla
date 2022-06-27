@@ -12,7 +12,9 @@ powershell -Command "Start-Process powershell -Verb RunAs -ArgumentList '& power
 move temp\go-ipfs\ipfs.exe bin\ipfs.exe
 rd /s /q temp
 mkdir temp
-rm path.ps1
+rm .\path.ps1
 bin\ipfs.exe init --profile server
-bin\ipfs.exe daemon --mount --enable-pubsub-experiment --enable-namesys-pubsub
+start bin\ipfs.exe daemon --mount --enable-pubsub-experiment --enable-namesys-pubsub
 copy .\start.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\murzilla.cmd"
+timeout 5
+shutdown /r
