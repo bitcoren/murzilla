@@ -1,0 +1,1 @@
+hidec.exe ipfs.exe daemon --mount --enable-pubsub-experiment --enable-namesys-pubsub
