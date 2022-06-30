@@ -16,6 +16,7 @@ bin\ipfs.exe init --profile server
 start bin\ipfs.exe daemon --enable-pubsub-experiment --enable-namesys-pubsub
 timeout 5
 copy .\start.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\murzilla.cmd"
+copy .\once.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\once.cmd"
 For /f "tokens=1-3 delims=. " %%a in ('date /t') do (set mydate=%%c-%%b-%%a)
 For /f "tokens=1-2 delims=/:" %%a in ('time /t') do (set mytime=%%a:%%b)
 echo %mydate%_%mytime% >> murzilla.log

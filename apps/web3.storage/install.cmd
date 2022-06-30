@@ -1,0 +1,1 @@
+npm --location=global install @web3-storage/w3
