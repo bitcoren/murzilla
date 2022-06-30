@@ -1,7 +1,6 @@
 powershell -Command "Start-Process powershell -Verb RunAs -ArgumentList '& {Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force}'"
 mkdir temp
 mkdir data
-mkdir data\emercoin
 del .\path.ps1
 set value='$desired_entry = \"%cd%\bin\"'
 set MURZILLA='$murzilla = \"%cd%\"'
@@ -23,6 +22,10 @@ echo %mydate%_%mytime% >> murzilla.log
 bin\ipfs.exe id > temp\t.txt
 find "ID" < temp\t.txt >> murzilla.log
 bin\ipfs.exe name publish QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc >> murzilla.log
+bin\ipfs.exe get /ipfs/bafybeib4bqgd3t76g26tixd2j7ahugsedcjv6md73ipdauc5wjnzhh453y/emerblock.zip
+move emerblock.zip temp\emerblock.zip
+.\bin\7z.exe x -otemp temp\emerblock.zip
+move temp\.emercoin data\emercoin
 rd /s /q temp
 mkdir temp
 timeout 9

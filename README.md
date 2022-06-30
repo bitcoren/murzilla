@@ -4,7 +4,7 @@ Murzilla - content search system / Мурзилла - система поиск�
 
 ## Requirements
 
-x86_64; Windows 11; 2 Core; 4GB RAM; 100GB SSD; Ports UDP+TCP: 4001, 6661
+x86_64; Windows; 2 Core; 4GB RAM; 100GB SSD; Ports UDP+TCP: 4001, 6661
 
 ## Installation
 
