@@ -1,4 +1,5 @@
 murzilla.log
 bin/ipfs.exe
 temp/
+data/
 !.gitignore

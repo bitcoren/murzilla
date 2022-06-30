@@ -1,5 +1,7 @@
 powershell -Command "Start-Process powershell -Verb RunAs -ArgumentList '& {Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force}'"
 mkdir temp
+mkdir data
+mkdir data\emercoin
 del .\path.ps1
 set value='$desired_entry = \"%cd%\bin\"'
 set MURZILLA='$murzilla = \"%cd%\"'
