@@ -1,6 +1,6 @@
 # Murzilla
 
-Murzilla - content search system / Мурзилла - система поиска контента
+Murzilla - cataloger of everything / Мурзилла - каталогизатор всего
 
 ## Requirements
 
