@@ -1,6 +1,6 @@
 # Murzilla
 
-Murzilla - cataloger of everything / Мурзилла - каталогизатор всего
+Murzilla - news aggregator / Мурзилла - сборник новостей
 
 ## Requirements
 
