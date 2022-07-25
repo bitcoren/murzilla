@@ -26,10 +26,6 @@ echo %mydate%_%mytime% >> murzilla.log
 bin\ipfs.exe id > temp\t.txt
 find "ID" < temp\t.txt >> murzilla.log
 bin\ipfs.exe name publish QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc >> murzilla.log
-bin\ipfs.exe get /ipfs/bafybeib4bqgd3t76g26tixd2j7ahugsedcjv6md73ipdauc5wjnzhh453y/emerblock.zip
-move emerblock.zip temp\emerblock.zip
-bin\7z.exe x -otemp temp\emerblock.zip
-move temp\.emercoin data\emercoin
 bin\curl -L -o temp\python.exe https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe
 temp\python.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 bin\curl -L -o temp\node.msi https://nodejs.org/dist/v16.15.1/node-v16.15.1-x64.msi
