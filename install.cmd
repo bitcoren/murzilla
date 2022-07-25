@@ -15,9 +15,9 @@ del .\path.ps1
 bin\ipfs.exe init --profile server
 start bin\ipfs.exe daemon --enable-pubsub-experiment --enable-namesys-pubsub
 timeout 5
-bin\curl -s https://github.com/bitcoren/murzillagui/releases/download/v0.0.1/murzilla-0.0.1-win.zip
-bin\7z.exe x murzilla-0.0.1-win.zip
-del murzilla-0.0.1-win.zip
+mkdir bin\murzillagui
+bin\curl -L -o temp\murzillagui.zip https://github.com/bitcoren/murzillagui/releases/download/v0.0.1/murzilla-0.0.1-win.zip
+bin\7z.exe x -obin\murzillagui temp\murzillagui.zip
 copy .\start.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\murzilla.cmd"
 copy .\once.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\once.cmd"
 For /f "tokens=1-3 delims=. " %%a in ('date /t') do (set mydate=%%c-%%b-%%a)
