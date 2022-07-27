@@ -15,6 +15,7 @@ del .\path.ps1
 bin\ipfs.exe init --profile server
 start bin\ipfs.exe daemon --enable-pubsub-experiment --enable-namesys-pubsub
 timeout 5
+bin\ipfs config --json Experimental.FilestoreEnabled true
 mkdir bin\murzillagui
 bin\curl -L -o temp\murzillagui.zip https://github.com/bitcoren/murzillagui/releases/download/v0.0.2/murzilla-0.0.2-win.zip
 bin\7z.exe x -obin\murzillagui temp\murzillagui.zip
