@@ -16,10 +16,15 @@ bin\ipfs.exe init --profile server
 start bin\ipfs.exe daemon --enable-pubsub-experiment --enable-namesys-pubsub
 timeout 5
 mkdir bin\murzillagui
-bin\curl -L -o temp\murzillagui.zip https://github.com/bitcoren/murzillagui/releases/download/v0.0.1/murzilla-0.0.1-win.zip
+bin\curl -L -o temp\murzillagui.zip https://github.com/bitcoren/murzillagui/releases/download/v0.0.2/murzilla-0.0.2-win.zip
 bin\7z.exe x -obin\murzillagui temp\murzillagui.zip
-copy .\start.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\murzilla.cmd"
-copy .\once.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\once.cmd"
+bin\curl -L -o temp\zeronet.zip https://github.com/ZeroNetX/ZeroNet/releases/download/v0.8.0/ZeroNet-win.zip
+bin\7z.exe x temp\zeronet.zip
+copy bin/zeronet.conf ZeroNet-win/zeronet.conf
+start ZeroNet-win\ZeroNet.exe
+start bin\murzillagui\murzilla.exe
+copy start.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\murzilla.cmd"
+copy once.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\once.cmd"
 For /f "tokens=1-3 delims=. " %%a in ('date /t') do (set mydate=%%c-%%b-%%a)
 For /f "tokens=1-2 delims=/:" %%a in ('time /t') do (set mytime=%%a:%%b)
 echo %mydate%_%mytime% >> murzilla.log
