@@ -1,11 +1,15 @@
 powershell -Command "Start-Process powershell -Verb RunAs -ArgumentList '& {Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force}'"
 mkdir temp
 mkdir data
+mkdir data\ipfs
+set IPFS_PATH=%cd%\data\ipfs
 del .\path.ps1
 set value='$desired_entry = \"%cd%\bin\"'
 set MURZILLA='$murzilla = \"%cd%\"'
+set IPFSPATH='$ipfspath = \"%cd%\data\ipfs\"'
 powershell -Command "Add-Content -Path .\path.ps1 -Value %value%"
 powershell -Command "Add-Content -Path .\path.ps1 -Value %MURZILLA%"
+powershell -Command "Add-Content -Path .\path.ps1 -Value %IPFSPAFH%"
 powershell -Command "Add-Content -Path .\path.ps1 -Value (Get-Content '.\path.ps')"
 powershell -Command "Start-Process powershell -Verb RunAs -ArgumentList '& powershell %CD%\path.ps1'"
 bin\curl -L -o temp\kubo.zip https://github.com/ipfs/kubo/releases/download/v0.14.0/kubo_v0.14.0_windows-amd64.zip
