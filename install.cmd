@@ -2,6 +2,7 @@ powershell -Command "Start-Process powershell -Verb RunAs -ArgumentList '& {Set-
 mkdir temp
 mkdir data
 mkdir data\ipfs
+mkdir data\ipfsshare
 set IPFS_PATH=%cd%\data\ipfs
 del .\path.ps1
 set value='$desired_entry = \"%cd%\bin\"'
