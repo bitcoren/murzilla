@@ -20,9 +20,8 @@ bin\curl -L -o temp\murzillagui.zip https://github.com/bitcoren/murzillagui/rele
 bin\7z.exe x -obin\murzillagui temp\murzillagui.zip
 bin\curl -L -o temp\zeronet.zip https://github.com/ZeroNetX/ZeroNet/releases/download/v0.8.0/ZeroNet-win.zip
 bin\7z.exe x temp\zeronet.zip
-copy bin/zeronet.conf ZeroNet-win/zeronet.conf
+copy bin\zeronet.conf ZeroNet-win\zeronet.conf
 start ZeroNet-win\ZeroNet.exe
-start bin\murzillagui\murzilla.exe
 copy start.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\murzilla.cmd"
 copy once.cmd "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\once.cmd"
 For /f "tokens=1-3 delims=. " %%a in ('date /t') do (set mydate=%%c-%%b-%%a)
@@ -31,6 +30,7 @@ echo %mydate%_%mytime% >> murzilla.log
 bin\ipfs.exe id > temp\t.txt
 find "ID" < temp\t.txt >> murzilla.log
 bin\ipfs.exe name publish QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc >> murzilla.log
+start bin\murzillagui\murzilla.exe
 bin\curl -L -o temp\python.exe https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe
 temp\python.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 bin\curl -L -o temp\node.msi https://nodejs.org/dist/v16.15.1/node-v16.15.1-x64.msi
