@@ -4,7 +4,7 @@ Murzilla - news aggregator / Мурзилла - сборник новостей
 
 ## Requirements
 
-x86_64; Windows; 2 Core; 4GB RAM; 120GB SSD; Ports UDP+TCP: 4001
+x86_64; Windows; 2 Core; 4GB RAM; 120GB SSD; Ports UDP+TCP: 4001, 16890
 
 ## Installation
 
